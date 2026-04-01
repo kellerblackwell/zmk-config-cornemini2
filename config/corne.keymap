@@ -63,110 +63,39 @@
                 <&macro_release>,
                 <&kp LCTRL>;
         };
-
     };
 
     combos {
         compatible = "zmk,combos";
 
+        leftControl {
+            bindings = <&kp LEFT_CONTROL>;
+            key-positions = <33 34>;
+        };
+
+        sysLayer {
+            bindings = <&mo 3>;
+            key-positions = <36 41>;
+        };
+
+        leftAlt {
+            bindings = <&kp LEFT_ALT>;
+            key-positions = <32 34>;
+        };
+
+        leftGui {
+            bindings = <&kp LEFT_GUI>;
+            key-positions = <32 33 34>;
+        };
+
+        leftTab {
+            bindings = <&kp TAB>;
+            key-positions = <13 14>;
+        };
+
         escape {
             bindings = <&kp ESCAPE>;
-            key-positions = <13 29>;
-        };
-
-        delete {
-            bindings = <&kp DELETE>;
-            key-positions = <15 21>;
-        };
-
-        perc {
-            bindings = <&kp PERCENT>;
-            key-positions = <5 17>;
-            layers = <0>;
-        };
-
-        equal {
-            bindings = <&kp EQUAL>;
-            key-positions = <28 16>;
-            layers = <0>;
-        };
-
-        dollar {
-            bindings = <&kp DOLLAR>;
-            key-positions = <4 16>;
-            layers = <0>;
-        };
-
-        pound {
-            bindings = <&kp POUND>;
-            key-positions = <3 15>;
-            layers = <0>;
-        };
-
-        at {
-            bindings = <&kp AT>;
-            key-positions = <2 14>;
-            layers = <0>;
-        };
-
-        backslash {
-            bindings = <&kp BACKSLASH>;
-            key-positions = <26 14>;
-            layers = <0>;
-        };
-
-        star {
-            bindings = <&kp STAR>;
-            key-positions = <8 20>;
-            layers = <0>;
-        };
-
-        slash {
-            bindings = <&kp SLASH>;
-            key-positions = <32 20>;
-            layers = <0>;
-        };
-
-        plus {
-            bindings = <&kp PLUS>;
-            key-positions = <7 19>;
-            layers = <0>;
-        };
-
-        minus {
-            bindings = <&kp KP_MINUS>;
-            key-positions = <31 19>;
-            layers = <0>;
-        };
-
-        underscore {
-            bindings = <&kp UNDER>;
-            key-positions = <30 18>;
-            layers = <0>;
-        };
-
-        leftbrack {
-            bindings = <&kp LEFT_BRACKET>;
-            key-positions = <31 32>;
-            layers = <0>;
-        };
-
-        rightbrack {
-            bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <33 32>;
-            layers = <0>;
-        };
-
-        para-less {
-            bindings = <&paraless>;
-            key-positions = <20 19>;
-            layers = <0>;
-        };
-
-        para-great {
-            bindings = <&paragreat>;
-            key-positions = <20 21>;
-            layers = <0>;
+            key-positions = <1 2>;
         };
     };
 
@@ -175,8 +104,8 @@
     keymap {
         compatible = "zmk,keymap";
 
-        DEF {
-            display-name = "Base";
+        Alpha {
+            display-name = "Alpha";
 
             // -----------------------------------------------------------------------------------------
             // |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |
@@ -185,65 +114,40 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&trans    &kp Q       &kp W  &kp E &kp R       &kp T        &kp Y    &kp U      &kp I          &kp O    &kp P     &trans
-&trans  &hm LGUI A  &hm LSHFT S  &hm LALT D  &hm LCTRL F  &kp G        &kp H    &hm RCTRL J  &hm RALT K     &hm RSHFT L  &hm RGUI SEMI  &trans
-&trans  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M      &kp COMMA      &kp DOT     &kp FSLH     &trans
-                         &kp LGUI  &mo 1  &kp SPACE    &kp RET  &lt 2 TAB  &kp BACKSPACE
+&trans  &kp Q  &kp W  &kp E  &kp R  &kp T             &kp Y      &kp U  &kp I    &kp O      &kp P     &trans
+&trans  &kp A  &kp S  &kp D  &kp F  &kp G             &kp H      &kp J  &kp K    &kp L      &kp SEMI  &trans
+&trans  &kp Z  &kp X  &kp C  &kp V  &kp B             &kp N      &kp M  &kp DOT  &kp COMMA  &kp FSLH  &trans
+                      &none  &mo 2  &kp LEFT_SHIFT    &kp SPACE  &mo 1  &tog 1
             >;
         };
 
-        NAV {
-            display-name = "NavNum";
-
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
-
+        Navigation {
+            display-name = "Nav";
             bindings = <
-&trans  &kp ESC       &trans        &trans        &kp END       &kp HOME           &kp N6   &kp N7        &kp N8       &kp N9        &kp N0  &trans
-&trans  &hm LGUI A  &hm LSHFT S  &hm LALT UP_ARROW  &hm LCTRL DEL    &kp PAGE_UP      &kp N0   &hm RCTRL N4  &hm RALT N5  &hm RSHFT N6  &hm RGUI PAGE_UP  &trans
-&trans  &kp DEL       &kp LEFT      &kp DOWN           &kp RIGHT_ARROW  &kp PAGE_DOWN    &trans   &kp N1        &kp N2       &kp N3        &kp PAGE_DOWN  &trans
-                          &kp LGUI      &trans           &kp SPACE        &kp RET  &mo 3        &trans
+&none   &kp HOME          &kp LEFT_ARROW  &kp DOWN        &kp RIGHT        &kp END         &kp LC(A)        &kp LC(C)     &kp LC(V)       &kp LC(X)       &none       &trans
+&trans  &kp LEFT_SHIFT    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none           &mkp MB3         &mkp LCLK     &mkp RCLK       &kp BACKSPACE   &kp RET     &trans
+&trans  &kp LEFT_CONTROL  &none           &none           &none            &none           &msc SCRL_RIGHT  &msc SCRL_UP  &msc SCRL_DOWN  &msc SCRL_LEFT  &kp DELETE  &trans
+                                          &none           &kp UP_ARROW     &mmv MOVE_UP    &none            &none         &tog 1
             >;
         };
 
-        SYM {
-            display-name = "Symbols";
-
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
+        NumSym {
             bindings = <
-&trans  &kp EXCL  &kp AT          &kp HASH        &kp DLLR         &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RPAR  &trans
-&trans   &trans    &trans          &hm LALT UP_ARROW  &hm LCTRL SQT    &kp GRAVE    &kp MINUS  &hm RCTRL EQUAL  &hm RALT LBKT  &hm RSHFT RBKT   &hm RGUI BSLH  &trans
-&trans  &trans    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp TILDE    &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC              &kp PIPE  &trans
-                                  &kp LGUI        &mo 3           &kp SPACE    &kp RET    &trans     &trans
+&none  &kp LS(EXCL)  &kp LS(AT)     &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)    &kp LS(CARET)  &kp LS(AMPS)  &kp LS(STAR)  &kp LS(LPAR)  &kp LS(RPAR)  &none
+&none  &kp N1        &kp N2         &kp N3         &kp N4        &kp N5           &kp N6         &kp N7        &kp N8        &kp N9        &kp N0        &none
+&none  &kp GRAVE     &kp LS(TILDE)  &kp LS(PLUS)   &kp MINUS     &kp EQUAL        &kp LS(LBRC)   &kp LS(RBRC)  &kp BSLH      &kp LBKT      &kp RBKT      &none
+                                    &none          &none         &none            &kp LS(UNDER)  &kp LS(PIPE)  &none
             >;
         };
 
-        ADJ {
+        System {
             display-name = "System";
             bindings = <
-&trans  &kp F1        &kp F2        &kp F3        &kp F4      &kp F5            &kp F6  &kp F7  &kp F8  &kp F9  &kp F10      &trans
-&trans  &hm LGUI F11  &hm LSHFT F12  &trans        &trans      &studio_unlock            &trans  &trans  &trans  &trans  &trans       &trans
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR  &bt BT_CLR_ALL    &trans  &trans  &trans  &trans  &bootloader  &trans
-                                    &trans        &trans      &trans            &trans  &trans  &trans
-            >;
-        };
-        EXTRA {
-                display-name = "Extra";
-            bindings = <
-&trans  &trans       &trans         &trans          &trans      &msc SCRL_UP    &trans  &trans  &trans  &trans  &trans      &trans
-&trans  &trans       &trans        &mmv MOVE_UP      &trans   &msc SCRL_DOWN            &trans  &mkp LCLK  &mkp RCLK  &trans  &trans       &trans
-&trans  &trans       &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                                     &trans        &trans      &trans            &trans  &trans  &trans
+&trans  &kp F1        &kp F2         &kp F3  &kp F4       &kp F5            &kp F6         &kp F7                &kp F8        &kp F9           &kp F10       &trans
+&trans  &hm LGUI F11  &hm LSHFT F12  &trans  &bootloader  &studio_unlock    &kp C_BRI_DEC  &kp C_BRIGHTNESS_INC  &kp C_VOL_DN  &kp C_VOLUME_UP  &kp K_MUTE    &trans
+&trans  &none         &none          &none   &none        &none             &bt BT_SEL 0   &bt BT_SEL 1          &bt BT_SEL 2  &bt BT_SEL 3     &bt BT_SEL 4  &trans
+                                     &trans  &trans       &trans            &trans         &trans                &trans
             >;
         };
     };
-
 };
