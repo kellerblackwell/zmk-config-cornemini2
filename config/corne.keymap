@@ -110,7 +110,7 @@
         compatible = "zmk,keymap";
 
         Alpha {
-            display-name = "Alpha";
+            display-name = "ALPHA";
 
             // -----------------------------------------------------------------------------------------
             // |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |
@@ -127,7 +127,7 @@
         };
 
         Navigation {
-            display-name = "Nav";
+            display-name = "NAV";
             bindings = <
 &none   &kp HOME          &kp LEFT_ARROW  &kp DOWN        &kp RIGHT        &kp END         &kp LC(A)        &kp LC(C)     &kp LC(V)       &kp LC(X)       &none       &trans
 &trans  &kp LEFT_SHIFT    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none           &mkp MB3         &mkp LCLK     &mkp RCLK       &kp BACKSPACE   &kp RET     &trans
@@ -143,10 +143,12 @@
 &none  &kp GRAVE     &kp LS(TILDE)  &kp LS(PLUS)   &kp MINUS     &kp EQUAL        &kp LS(LBRC)   &kp LS(RBRC)  &kp BSLH      &kp LBKT      &kp RBKT      &none
                                     &none          &none         &none            &kp LS(UNDER)  &kp LS(PIPE)  &none
             >;
+
+            label = "NUM/SYM";
         };
 
         System {
-            display-name = "System";
+            display-name = "SYS";
             bindings = <
 &trans  &kp F1        &kp F2         &kp F3  &kp F4       &kp F5            &kp F6         &kp F7                &kp F8        &kp F9           &kp F10       &trans
 &trans  &hm LGUI F11  &hm LSHFT F12  &trans  &bootloader  &studio_unlock    &kp C_BRI_DEC  &kp C_BRIGHTNESS_INC  &kp C_VOL_DN  &kp C_VOLUME_UP  &kp C_MUTE    &trans
