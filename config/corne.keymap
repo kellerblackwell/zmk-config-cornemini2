@@ -138,19 +138,9 @@
             key-positions = <20 32>;
         };
 
-        openParen {
-            bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <22 34>;
-        };
-
         closeParen {
             bindings = <&kp RIGHT_PARENTHESIS>;
             key-positions = <22 34>;
-        };
-
-        backslash {
-            bindings = <&kp BACKSLASH>;
-            key-positions = <11 23>;
         };
 
         equal {
@@ -176,6 +166,16 @@
         leftTab {
             bindings = <&kp TAB>;
             key-positions = <13 1>;
+        };
+
+        openParen {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <21 33>;
+        };
+
+        backslash {
+            bindings = <&kp BACKSLASH>;
+            key-positions = <10 22>;
         };
     };
 
