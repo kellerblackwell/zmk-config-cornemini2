@@ -88,11 +88,6 @@
             key-positions = <32 33 34>;
         };
 
-        leftTab {
-            bindings = <&kp TAB>;
-            key-positions = <13 14>;
-        };
-
         escape {
             bindings = <&kp ESCAPE>;
             key-positions = <1 2>;
@@ -101,6 +96,86 @@
         quote {
             bindings = <&kp SINGLE_QUOTE>;
             key-positions = <21 22>;
+        };
+
+        exclamation {
+            bindings = <&kp EXCL>;
+            key-positions = <13 25>;
+        };
+
+        at {
+            bindings = <&kp AT>;
+            key-positions = <26 14>;
+        };
+
+        hash {
+            bindings = <&kp POUND>;
+            key-positions = <27 15>;
+        };
+
+        dollar {
+            bindings = <&kp DOLLAR>;
+            key-positions = <16 28>;
+        };
+
+        percent {
+            bindings = <&kp PERCENT>;
+            key-positions = <17 29>;
+        };
+
+        caret {
+            bindings = <&kp CARET>;
+            key-positions = <30 18>;
+        };
+
+        ampersand {
+            bindings = <&kp AMPERSAND>;
+            key-positions = <19 31>;
+        };
+
+        star {
+            bindings = <&kp ASTRK>;
+            key-positions = <20 32>;
+        };
+
+        openParen {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <22 34>;
+        };
+
+        closeParen {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <22 34>;
+        };
+
+        backslash {
+            bindings = <&kp BACKSLASH>;
+            key-positions = <11 23>;
+        };
+
+        equal {
+            bindings = <&kp EQUAL>;
+            key-positions = <9 21>;
+        };
+
+        dash {
+            bindings = <&kp MINUS>;
+            key-positions = <8 20>;
+        };
+
+        openbrack {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <6 18>;
+        };
+
+        closebrack {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <7 19>;
+        };
+
+        leftTab {
+            bindings = <&kp TAB>;
+            key-positions = <13 1>;
         };
     };
 
